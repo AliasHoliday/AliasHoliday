@@ -64,8 +64,7 @@ let timeInSeconds = 60;
 const countdownDisplay = document.getElementById("Shutdown");
 
 // Define the function to update the timer.
-function updateCountdown() {
-    // Calculate minutes and seconds.
+function updateCountdown("0:60") {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
 
@@ -78,7 +77,7 @@ function updateCountdown() {
     // When the countdown is finished, reload the page.
     if (timeInSeconds < 0) {
         clearInterval(timerInterval); // Stop the timer.
-        location.reload(); // Reload the current page.
+        location.reload("https://aliasholiday.github.io/AliasHoliday/"); 
     }
 }
 
