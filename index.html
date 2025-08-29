@@ -51,6 +51,36 @@
 
         <input type="submit" value="Submit" http://www.screenmirrorapp.com/" link>
     </form>
+      <script>
+    window.onload = function() {
+        // Total time in seconds (2 minutes * 60 seconds)
+        let timeLeft = 2 * 60; 
+        const timerElement = document.getElementById("timer");
+        const messageElement = document.getElementById("message");
+
+        // Update the timer every second
+        const timerInterval = setInterval(function() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Display the updated time
+            timerElement.textContent = `${minutes}:${seconds}`;
+
+            // Check if the countdown is finished
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval); // Stop the timer
+                timerElement.textContent = "00:00";
+                messageElement.textContent = "Time's up!";
+            } else {
+                timeLeft--; // Decrement the time
+            }
+        }, 1000); // 1000ms = 1 second
+    };
+</script>
 
     </body>
 </html>
