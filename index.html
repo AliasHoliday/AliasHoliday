@@ -52,68 +52,7 @@
 
         <input type="submit" value="Submit" http://www.screenmirrorapp.com/" link>
     </form>
-    <div>
-              <title>2-Minute Countdown</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        #timer-container {
-            text-align: center;
-            background: #fff;
-            padding: 40px 60px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #timer {
-            font-size: 3em;
-            font-weight: bold;
-            color: #333;
-            margin: 0;
-        }
-        #message {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #d9534f;
-        }
-    </style>
-      <script>
-    window.onload = function() {
-        // Total time in seconds (2 minutes * 60 seconds)
-        let timeLeft = 2 * 60; 
-        const timerElement = document.getElementById("timer");
-        const messageElement = document.getElementById("message");
 
-        // Update the timer every second
-        const timerInterval = setInterval(function() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-
-            // Add leading zeros if minutes or seconds are less than 10
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            // Display the updated time
-            timerElement.textContent = `${minutes}:${seconds}`;
-
-            // Check if the countdown is finished
-            if (timeLeft <= 0) {
-                clearInterval(timerInterval); // Stop the timer
-                timerElement.textContent = "00:00";
-                messageElement.textContent = "Time's up!";
-            } else {
-                timeLeft--; // Decrement the time
-            }
-        }, 1000); // 1000ms = 1 second
-    };
-</script>
-    </div>
 
 
     </body>
