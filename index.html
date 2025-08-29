@@ -52,37 +52,10 @@
 
         <input type="submit" value="Submit" http://www.screenmirrorapp.com/" link>
     </form>
- <div class="timer-container">
-        <h1 id="Shutdown">1:00</h1>
-        <p>This page will shutdown in one minute.</p>
-    </div>
-    <script>
-    // The total time for the countdown in seconds (1 minute = 60 seconds).
-let timeInSeconds = 60;
-
-// Get the HTML element for the countdown display.
-const countdownDisplay = document.getElementById("Shutdown");
-
-// Define the function to update the timer.
-function updateCountdown("0:60") {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-
-    // Display the time, padding with a leading zero for seconds if needed.
-    countdownDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-    // Decrease the time by one second.
-    timeInSeconds -1-;
-
-    // When the countdown is finished, reload the page.
-    if (timeInSeconds < 0) {
-        clearInterval(timerInterval); // Stop the timer.
-        location.reload("https://aliasholiday.github.io/AliasHoliday/"); 
-    }
-}
-
-// Set up an interval to call the updateCountdown function every second (1000ms).
-const timerInterval = setInterval(updateCountdown, 1000);
+<script>
+setTimeout(function() {
+  location.reload();
+}, 100000);
 </script>
 
 
