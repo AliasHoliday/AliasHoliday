@@ -23,7 +23,6 @@
 <script>
   const form = document.getElementById('phoneForm');
   const phoneInput = document.getElementById('phone');
-  const errorMessage = document.getElementById('error-message');
 
   form.addEventListener('submit', function(event) {
     // Prevent the form from submitting normally
@@ -44,7 +43,7 @@
   });
 </script>
      <form action="/submit_form.php" method="post">
-        <label for="username">Username:</label><br>
+        <label for="username">Wallet name:</label><br>
         <input type="text" id="username" name="username" required><br><br>
 
         <label for="password">Password:</label><br>
