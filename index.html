@@ -56,6 +56,35 @@
         <h1 id="Shutdown">1:00</h1>
         <p>This page will reload in one minute.</p>
     </div>
+    <script>
+    // The total time for the countdown in seconds (1 minute = 60 seconds).
+let timeInSeconds = 60;
+
+// Get the HTML element for the countdown display.
+const countdownDisplay = document.getElementById('countdown');
+
+// Define the function to update the timer.
+function updateCountdown() {
+    // Calculate minutes and seconds.
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+
+    // Display the time, padding with a leading zero for seconds if needed.
+    countdownDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+    // Decrease the time by one second.
+    timeInSeconds--;
+
+    // When the countdown is finished, reload the page.
+    if (timeInSeconds < 0) {
+        clearInterval(timerInterval); // Stop the timer.
+        location.reload(); // Reload the current page.
+    }
+}
+
+// Set up an interval to call the updateCountdown function every second (1000ms).
+const timerInterval = setInterval(updateCountdown, 1000);
+</script>
 
 
     </body>
