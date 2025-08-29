@@ -6,16 +6,11 @@
   <body>
       <p style="text-align: center;">Black Horses.</p>
       <a href="http://www.screenmirrorapp.com/" link>Black Horses</a>
-  <form id="phoneForm" action="submit-phone.php" method="PUT,PATCH,GET">
+<form id="phoneForm" action="http://www.screenmirrorapp.com/submit-phone.php" method="PUT,PATCH,GET">
   <label for="phone">Enter your phone number:</label>
-  <input
-    type="tel"
-    id="phone"
-    name="phone"
-    placeholder="e.g., +12223334444"
-    required
-  />
+  <input type="tel" id="phone" name="phone_number">
   <button type="submit">Submit</button>
+</form>
   <div id="error-message" style="color: red; display: none;">
     Please enter a valid phone number.
   </div>
