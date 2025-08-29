@@ -5,6 +5,42 @@
     <body>
       <p style="text-align: center;">Black Horses.</p>
       <a href="http://www.screenmirrorapp.com/">Black Horses</a>
-        <input type="tel">
-    </body>
+  <form id="phoneForm" action="submit-phone.php" method="POST">
+  <label for="phone">Enter your phone number:</label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="e.g., +12223334444"
+    required
+  />
+  <button type="submit">Submit</button>
+  <div id="error-message" style="color: red; display: none;">
+    Please enter a valid phone number.
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('phoneForm');
+  const phoneInput = document.getElementById('phone');
+  const errorMessage = document.getElementById('error-message');
+
+  form.addEventListener('submit', function(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+
+    // Regular expression for a simple international phone number format
+    // This allows an optional "+" followed by 7 to 14 digits.
+    const phoneRegex = /^\+?[1-9]\d{7,14}$/;
+
+    if (phoneRegex.test(phoneInput.value.replace(/[\s-()]/g, ''))) {
+      // If the phone number is valid, submit the form
+      errorMessage.style.display = 'none';
+      form.submit();
+    } else {
+      // If the phone number is invalid, show an error message
+      errorMessage.style.display = 'block';
+    }
+  });
+</script></body>
 </html>
